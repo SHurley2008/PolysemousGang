@@ -1,27 +1,26 @@
 import csv
 
 #creates the csv file and assigns the headers to the first row
-#header = ["firstName", "lastName", "phoneNum", "dob", "age"]
-#file = open("patients.csv", "a", newline = "")
-#db = csv.writer(file)
-#db.writerow(header)
-#file.close()
+header = ["Team", "wins", "draws", "losses", "date"]
+file = open("leaderboard.csv", "a", newline = "")
+db = csv.writer(file)
+db.writerow(header)
+file.close()
 
 #This code fills data into the csv file
-#record1 = ["Joan", "Byrne", "0981 45877", "2/2/75", "45"]
-#record2 = ["Gideon", "Jones", "0983 76800", "4/7/59", "61"]
-#record3 = ["Noor", "Patel", "0983 54689", "3/6/03", "17"]
+record1 = ["Limerick", "5", "2", "4", "2/2/75"]
+record2 = ["Cork", "3", "4", "3","4/7/59"]
+record3 = ["Dublin", "4", "0", "2","3/6/03"]
+file = open("leaderboard.csv", "a", newline="")
 
-#file = open("patients.csv", "a", newline="")
+db = csv.writer(file)
+db.writerow(record1)
+db.writerow(record2)
+db.writerow(record3)
 
-#db = csv.writer(file)
-#db.writerow(record1)
-#db.writerow(record2)
-#db.writerow(record3)
+file.close()
 
-#file.close()
-
-file = open("patients.csv", "r")
+file = open("leaderboard.csv", "r")
 records = list(csv.reader(file))
 file.close()
 #print(records)
