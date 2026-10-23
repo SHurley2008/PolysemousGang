@@ -5,7 +5,58 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Title</title>
     </head>
+    <style>
+        body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f7f3f3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #23df23;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 10px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: #000000;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+
     <body>
+       <div class="sidenav">
+  <a href="\\srv-ccc-005.ad.lcetb.ie\Users\21shurley\Desktop\polysemousgang\page.html">Home</a>
+  <a href="#Members">Members</a>
+  <a href="#Calendar">Calendar</a>
+  <a href="#Statistics">Statistics</a>
+  <a href="#Leaderboard">Leaderboard</a>
+  <a href="\\srv-ccc-005.ad.lcetb.ie\Users\21shurley\Desktop\polysemousgang\Register.html">Register Here</a>
+</div>
+  
         <!DOCTYPE html>
         <html lang="en">
             <head>
@@ -14,6 +65,7 @@
                 <title>Title</title>
             </head>
             <body>
+                <div class="main"> 
             <h1>Limerick Hurling Team</h1>
             <h3>Welcome to the Limerick Hurling Team system</h3> 
             <p>Enter your first name and surname:</p><input type="text">
@@ -76,7 +128,7 @@
             <br>
             <button>Submit</button>
         
-        
+        </div>
         
             </body>
         </html>    
