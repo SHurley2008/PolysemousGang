@@ -1,136 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Title</title>
-    </head>
-    <style>
-        body {
-  font-family: "Lato", sans-serif;
-}
-
-.sidenav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  padding-top: 20px;
-}
-
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #f7f3f3;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #23df23;
-}
-
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 10px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-  color: #000000;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-
-
-    <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register</title>
+  <style>
+    body { margin: 0; background: #050505; color: #f5f5f5; font-family: Arial, sans-serif; }
+    .sidenav { box-sizing: border-box; width: 275px; height: 100vh; position: fixed; z-index: 2; top: 0; left: 0; padding: 12px 14px; background: #050505; border-right: 2px solid #191919; }
+    .sidenav a { box-sizing: border-box; display: flex; align-items: center; gap: 10px; height: 44px; margin: 7px 0; padding: 8px 9px; background: #191919; color: #f7f7f7; text-decoration: none; text-transform: uppercase; font: 600 16px "Arial Narrow", Arial, sans-serif; }
+    .sidenav a svg { width: 24px; height: 24px; flex: 0 0 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .sidenav a svg .filled { fill: currentColor; stroke: none; }
+    .sidenav a:hover { color: #10a95a; }
+    .main { margin-left: 275px; padding: 24px 32px; color: #f5f5f5; max-width: 800px; }
+    h1 { font-weight: 600; }
+    .main { font-size: 16px; }
+    input, select { margin: 4px 0; }
+    @media (max-width: 700px) { .sidenav { width: 190px; padding: 10px; } .sidenav a { font-size: 14px; } .main { margin-left: 190px; padding: 20px 16px; } }
+  </style>
+</head>
+<body>
        <div class="sidenav">
-  <a href="\\srv-ccc-005.ad.lcetb.ie\Users\21shurley\Desktop\polysemousgang\page.html">Home</a>
-  <a href="#Members">Members</a>
-  <a href="#Calendar">Calendar</a>
-  <a href="#Statistics">Statistics</a>
-  <a href="#Leaderboard">Leaderboard</a>
-  <a href="\\srv-ccc-005.ad.lcetb.ie\Users\21shurley\Desktop\polysemousgang\Register.html">Register Here</a>
+  <a href="page.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="filled" d="M2 10.5 12 2l10 8.5v11a.5.5 0 0 1-.5.5h-6.2v-7.2H8.7V22H2.5a.5.5 0 0 1-.5-.5z"/><path d="m1 10 11-9 11 9"/></svg>Home</a>
+  <a href="members.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="filled" cx="12" cy="7" r="5"/><path class="filled" d="M2 22v-2.2A8.2 8.2 0 0 1 10.2 12h3.6a8.2 8.2 0 0 1 8.2 7.8V22z"/></svg>Members</a>
+  <a href="Calendar.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="18" rx="2"/><path d="M7 2v5M17 2v5M2 9h20M6 12h3v3H6zM12 12h3v3h-3zM6 17h3v2H6z"/><path d="m15 18 1.5 1.5L20 16"/></svg>Calendar</a>
+  <a href="Statistics.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M20 3 4 21"/></svg>Statistics</a>
+  <a href="Leaderboard.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="4" cy="6" r="2"/><circle cx="4" cy="12" r="2"/><circle cx="4" cy="18" r="2"/><path d="M8 6h9M8 12h9M8 18h6M18 2l1.5 3 3.3.5-2.4 2.3.6 3.2-3-1.6-3 1.6.6-3.2-2.4-2.3 3.3-.5z"/></svg>Leaderboard</a>
+  <a href="Register.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a7 7 0 0 1 7-7h1a7 7 0 0 1 6 3.4M19 14v8M15 18h8"/></svg>Register Here</a>
 </div>
-  
-        <!DOCTYPE html>
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width,initial-scale=1">
-                <title>Title</title>
-            </head>
-            <body>
-                <div class="main"> 
-            <h1>Limerick Hurling Team</h1>
-            <h3>Welcome to the Limerick Hurling Team system</h3> 
-            <p>Enter your first name and surname:</p><input type="text">
-            <input type="text">
-            <br>
-            <p>Enter your age and date of birth:</p><input type="number">
-            <br>
-            <input type="date">
-            <br>
-            <p>Please select the province and county your in:</p><select>
-                <option value="0"></option>
-                <option value="1">Connacht</option>
-                <option value="2">Leinster</option>
-                <option value="3">Munster</option>
-                <option value="4">Ulster</option>
-            </select>
-            <br>
-            <select>
-                <option value="0"></option>
-                <option value="1">Antrim</option>
-                <option value="2">Armagh</option>
-                <option value="3">Carlow</option>
-                <option value="4">Cavan</option>
-                <option value="5">Clare</option>
-                <option value="6">Cork</option>
-                <option value="7">Derry</option>
-                <option value="8">Donegal</option>
-                <option value="9">Down</option>
-                <option value="10">Dublin</option>
-                <option value="11">Fermanagh</option>
-                <option value="12">Galway</option>
-                <option value="13">Kerry</option>
-                <option value="14">Kildare</option>
-                <option value="15">Kilkenny</option>
-                <option value="16">Laois</option>
-                <option value="17">Leitrim</option>
-                <option value="18">Limerick</option>
-                <option value="19">Longford</option>
-                <option value="20">Louth</option>
-                <option value="21">Mayo</option>
-                <option value="22">Meath</option>
-                <option value="23">Monaghan</option>
-                <option value="24">Offaly</option>
-                <option value="25">Roscommon</option>
-                <option value="26">Sligo</option>
-                <option value="27">Tipperary</option>
-                <option value="28">Tyrone</option>
-                <option value="29">Waterford</option>
-                <option value="30">Westmeath</option>
-                <option value="31">Wexford</option>
-                <option value="32">Wicklow</option>
-                <option value="33">Fedamore</option>
-            </select>
-        <br>
-        <br>
-            <p>Please enter your email:</p><input type="text">
-            <br>
-            <p>Please enter your address</p><input type="text">
-            <br>
-            <br>
-            <button>Submit</button>
-        
-        </div>
-        
-            </body>
-        </html>    
-    </body>
+  <main class="main">
+    <h1>Limerick Hurling Team</h1>
+    <h3>Welcome to the Limerick Hurling Team system</h3>
+    <form action="/register" method="post">
+      <p>Enter your first name and surname:</p>
+      <input type="text" name="first_name" autocomplete="given-name" required>
+      <input type="text" name="last_name" autocomplete="family-name" required>
+      <br>
+      <p>Enter your age and date of birth:</p>
+      <input type="number" name="age" min="1" max="120" required>
+      <br>
+      <input type="date" name="date_of_birth" required>
+      <br>
+      <p>Please select the province and county you're in:</p>
+      <select name="province" required>
+        <option value="">Choose a province</option>
+        <option>Connacht</option><option>Leinster</option><option>Munster</option><option>Ulster</option>
+      </select>
+      <br>
+      <select name="county" required>
+        <option value="">Choose a county</option>
+        <option>Antrim</option><option>Armagh</option><option>Carlow</option><option>Cavan</option><option>Clare</option><option>Cork</option><option>Derry</option><option>Donegal</option><option>Down</option><option>Dublin</option><option>Fermanagh</option><option>Galway</option><option>Kerry</option><option>Kildare</option><option>Kilkenny</option><option>Laois</option><option>Leitrim</option><option>Limerick</option><option>Longford</option><option>Louth</option><option>Mayo</option><option>Meath</option><option>Monaghan</option><option>Offaly</option><option>Roscommon</option><option>Sligo</option><option>Tipperary</option><option>Tyrone</option><option>Waterford</option><option>Westmeath</option><option>Wexford</option><option>Wicklow</option><option>Fedamore</option>
+      </select>
+      <br><br>
+      <p>Please enter your email:</p>
+      <input type="email" name="email" autocomplete="email" required>
+      <br>
+      <p>Please enter your address:</p>
+      <input type="text" name="address" autocomplete="street-address" required>
+      <br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+</body>
 </html>

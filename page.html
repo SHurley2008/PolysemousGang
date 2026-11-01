@@ -2,97 +2,151 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home</title>
 <style>
 body {
-  font-family: "Lato", sans-serif;
+  margin: 0;
+  background: #050505;
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
 }
-
 .sidenav {
-  height: 100%;
-  width: 160px;
+  box-sizing: border-box;
+  width: 275px;
+  height: 100vh;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
-  background-color: #111;
-  padding-top: 20px;
+  padding: 12px 14px;
+  background: #050505;
+  border-right: 2px solid #191919;
 }
-
 .sidenav a {
-  padding: 6px 8px 6px 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  margin: 7px 0;
+  padding: 8px 9px;
+  background: #191919;
+  color: #f7f7f7;
   text-decoration: none;
-  font-size: 25px;
-  color: #f7f3f3;
-  display: block;
+  text-transform: uppercase;
+  font: 600 16px "Arial Narrow", Arial, sans-serif;
 }
-
-.sidenav a:hover {
-  color: #23df23;
+.sidenav a svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
-
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-  color: #f7f3f3;
+.sidenav a svg .filled { fill: currentColor; stroke: none; }
+.sidenav a:hover { color: #10a95a; }
+.main { margin-left: 275px; padding: 0 28px; color: #f5f5f5; }
+@media (max-width: 700px) {
+  .sidenav { width: 190px; padding: 10px; }
+  .sidenav a { font-size: 14px; }
+  .main { margin-left: 190px; padding: 0 16px; }
 }
-
 .image-container {
-  margin-left: 140px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10x;
+  position: relative;
+  height: 345px;
+  margin-left: 275px;
+  overflow: hidden;
 }
-
-.text-overlay {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-                color: rgb(0, 255, 85);
-                }
-
+.image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
 .image-container::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: rgba(0, 0, 0, 0.3);
-                }
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .58);
+  pointer-events: none;
 }
-
-
+.text-overlay {
+  position: absolute;
+  z-index: 1;
+  left: 18px;
+  right: 18px;
+  bottom: 35px;
+  color: #079b54;
+}
+.text-overlay p { margin: 0 0 6px; color: #b6a85c; font: 500 12px Arial, sans-serif; }
+.text-overlay h2 { margin: 0 0 8px; color: white; font: 600 18px "Arial Narrow", Arial, sans-serif; }
+.text-overlay h1 { margin: 0; font: 600 64px "Arial Narrow", Arial, sans-serif; line-height: 1; }
+.main { margin-left: 275px; padding: 0 48px; color: #f5f5f5; }
+.main h2 { margin-top: 12px; font: 600 24px "Arial Narrow", Arial, sans-serif; text-decoration: underline; }
+.history-copy {
+  max-width: 1000px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 0 18px 12px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  scrollbar-color: #079b54 #191919;
+}
+.history-copy p { margin: 0 0 16px; }
+.history-copy a { color: #16b86a; }
+.history-copy a:hover { color: #75e4a8; }
+@media (max-width: 900px) { .text-overlay h1 { font-size: clamp(36px, 8vw, 64px); } }
+@media (max-width: 700px) {
+  .image-container { margin-left: 190px; height: 300px; }
+  .main { margin-left: 190px; }
+}
 </style>
 </head>
 <body>
 
 <div class="sidenav">
-  <a href="\\srv-ccc-005.ad.lcetb.ie\Users\21shurley\Desktop\polysemousgang\page.html">Home</a>
-  <a href="#Members">Members</a>
-  <a href="#Calendar">Calendar</a>
-  <a href="#Statistics">Statistics</a>
-  <a href="#Leaderboard">Leaderboard</a>
-  <a href="\\srv-ccc-005.ad.lcetb.ie\Users\21shurley\Desktop\polysemousgang\Register.html">Register Here</a>
+  <a href="page.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="filled" d="M2 10.5 12 2l10 8.5v11a.5.5 0 0 1-.5.5h-6.2v-7.2H8.7V22H2.5a.5.5 0 0 1-.5-.5z"/><path d="m1 10 11-9 11 9"/></svg>Home</a>
+  <a href="members.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="filled" cx="12" cy="7" r="5"/><path class="filled" d="M2 22v-2.2A8.2 8.2 0 0 1 10.2 12h3.6a8.2 8.2 0 0 1 8.2 7.8V22z"/></svg>Members</a>
+  <a href="Calendar.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="18" rx="2"/><path d="M7 2v5M17 2v5M2 9h20M6 12h3v3H6zM12 12h3v3h-3zM6 17h3v2H6z"/><path d="m15 18 1.5 1.5L20 16"/></svg>Calendar</a>
+  <a href="Statistics.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M20 3 4 21"/></svg>Statistics</a>
+  <a href="Leaderboard.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="4" cy="6" r="2"/><circle cx="4" cy="12" r="2"/><circle cx="4" cy="18" r="2"/><path d="M8 6h9M8 12h9M8 18h6M18 2l1.5 3 3.3.5-2.4 2.3.6 3.2-3-1.6-3 1.6.6-3.2-2.4-2.3 3.3-.5z"/></svg>Leaderboard</a>
+  <a href="Register.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a7 7 0 0 1 7-7h1a7 7 0 0 1 6 3.4M19 14v8M15 18h8"/></svg>Register Here</a>
 </div>
  
 <div class="image-container">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL1EuyuyPLN9GDZ3F-yUyAPkQu9IxvOshBk7PPho59tnJ_crhuxe6bD9w&s=10" width="100%" height="100%" alt="Limerick Hurling Team">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL1EuyuyPLN9GDZ3F-yUyAPkQu9IxvOshBk7PPho59tnJ_crhuxe6bD9w&s=10" alt="Limerick Hurling Team">
    
 
 <div class="text-overlay">
-              <h1 class = "headline"> WELCOME TO LIMERICK GAA </h1>
+              <p>LIMERICK ROCKS</p>
+              <h2>THE BEST TEAM EVER</h2>
+              <h1>WELCOME TO LIMERICK GAA</h1>
             </div>
 
               </div>
-            </div>
 
         
 <div class="main">
-  <h2>History of Limerick Hurling Team</h2>
-  <p>The Limerick County Hurling Team was founded in 1884, it was founded by the Gaelic Athletic Association, known as the GAA. Limerick's first outright success in hurling was achieved when the Kilfinane club defeated Kilkenny GAA club Tullaroan in the final of the 1897 All-Ireland Senior Hurling Championship. Limerick won the 1918 All-Ireland SHC and the won again in the 1921 All-Ireland SHC, winning the Liam MacCarthy Cup. </p>
+  <h2>History</h2>
+  <div class="history-copy">
+    <p>The Limerick County Hurling Team was founded in 1884 by the Gaelic Athletic Association, known as the GAA. Limerick's first outright success in hurling was achieved when the Kilfinane club defeated <a href="https://en.wikipedia.org/wiki/Kilkenny_GAA">Kilkenny GAA</a> club <a href="https://en.wikipedia.org/wiki/Tullaroan_GAA">Tullaroan</a> in <a href="https://en.wikipedia.org/wiki/1897_All-Ireland_Senior_Hurling_Championship_Final">the final</a> of the 1897 All-Ireland Senior Hurling Championship. Limerick won the 1918 All-Ireland SHC and again in 1921, winning the Liam MacCarthy Cup.</p>
+
+    <p>The 1930s were known as the salad days of Limerick hurling. The team won five consecutive Munster SHC titles, a feat achieved only by Limerick and Cork. After winning All-Ireland SHC titles in 1934 and 1936, Limerick won another in 1940. The team helped raise the profile of the sport: around 30,000 people attended the 1930 All-Ireland SHC Final.</p>
+
+    <p>Limerick won the 1970–71 NHL title and soon after won the 1973 All-Ireland SHC, their 17th title. Four further NHL titles followed: 1983–84, 1984–85, 1991–92 and 1997.</p>
+
+    <p>In the early 2000s, Limerick won three consecutive All-Ireland Under-21 Hurling Championship titles. In 2007, Limerick defeated Tipperary in a Munster SHC semi-final known as the Trilogy, as three games were required to separate the teams. The second replay ended 0–22 to 2–13. An attendance of 30,608 witnessed Limerick defeat Tipperary for the first time since 1996. Limerick had not won a Munster SHC match since a 2001 comeback against <a href="https://en.wikipedia.org/wiki/Waterford_county_hurling_team">Waterford</a>. The team then reached a Munster SHC final, which they lost to Tipperary, the “gorilla” on their back, as <a href="https://en.wikipedia.org/wiki/Seamus_Hickey">Seamus Hickey</a> referred to them.</p>
+
+    <p>Limerick were drawn against Clare in the first round of the 2008 Munster SHC, but Clare won 4–12 to 1–16, eliminating Limerick. The result sent Limerick into a game against <a href="https://en.wikipedia.org/wiki/Offaly_county_hurling_team">Offaly</a> under the revised All-Ireland SHC qualifying system. Limerick lost 3–19 to 0–18, ending their season.</p>
+
+    <p>Limerick opened the 2009 Munster SHC against Waterford in a draw, then narrowly lost the <a href="https://en.wikipedia.org/wiki/Replay_(sports)">replay</a>. In the All-Ireland SHC qualifiers, they defeated <a href="https://en.wikipedia.org/wiki/Wexford_county_hurling_team">Wexford</a> and <a href="https://en.wikipedia.org/wiki/Laois_county_hurling_team">Laois</a>, then Dublin in a quarter-final, to reach a semi-final against Tipperary. Tipperary won by 22 points. In October 2011, <a href="https://en.wikipedia.org/wiki/John_Allen_(hurler)">John Allen</a> was appointed manager. After defeats to Clare in the Division 1B Final and Tipperary in the Munster SHC, a summer fitness course helped the team improve. A creditable loss to Kilkenny in the <a href="https://en.wikipedia.org/wiki/2012_All-Ireland_Senior_Hurling_Championship">2012 All-Ireland SHC</a> quarter-final offered hope for 2013. As in 2012, Dublin, managed by <a href="https://en.wikipedia.org/wiki/Anthony_Daly_(hurler)">Anthony Daly</a>, defeated Limerick in the 2013 NHL Division 1B Final.</p>
+
+    <p>The <a href="https://en.wikipedia.org/wiki/2018_Limerick_county_hurling_team_season">2018 season</a> concluded with Limerick winning the <a href="https://en.wikipedia.org/wiki/2018_All-Ireland_Senior_Hurling_Championship">All-Ireland SHC</a>, their first since 1973. They defeated Galway 3–16 to 2–18 in <a href="https://en.wikipedia.org/wiki/2018_All-Ireland_Senior_Hurling_Championship_Final">the final</a>. The team built on this success, winning the NHL in 2019, 2020 and 2023; the Munster SHC in 2019, 2020, 2021 and 2022; and the All-Ireland SHC again in 2020, <a href="https://en.wikipedia.org/wiki/2021_All-Ireland_Senior_Hurling_Championship">2021</a> and 2022.</p>
+  </div>
   </div>
  <script>
         document.body.style.backgroundColor = "#000000";
