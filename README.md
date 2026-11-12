@@ -1,10 +1,7 @@
 # PolysemousGang
 Computer Science ALT team 3 - Faith, Jamie and Donnacha.
 
-## Run the server
-
+run:
 python3 server.py
 
-forward port `8000`, 
-
-saved to `accounts.csv` 
+Open the site using the forwarded port 8000

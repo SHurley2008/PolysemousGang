@@ -15,6 +15,8 @@
     h1 { font-weight: 600; }
     .main { font-size: 16px; }
     input, select { margin: 4px 0; }
+    .registration-status { padding: 12px; border-left: 4px solid #10a95a; background: #191919; color: #75e4a8; }
+    .privacy-note { color: #c5c6ca; line-height: 1.5; }
     @media (max-width: 700px) { .sidenav { width: 190px; padding: 10px; } .sidenav a { font-size: 14px; } .main { margin-left: 190px; padding: 20px 16px; } }
   </style>
 </head>
@@ -30,6 +32,8 @@
   <main class="main">
     <h1>Limerick Hurling Team</h1>
     <h3>Welcome to the Limerick Hurling Team system</h3>
+    <p id="registration-status" class="registration-status" role="status" hidden>Your registration has been saved.</p>
+    <p class="privacy-note">Registration details are stored in the club’s CSV file on the server and are not displayed publicly.</p>
     <form action="/register" method="post">
       <p>Enter your first name and surname:</p>
       <input type="text" name="first_name" autocomplete="given-name" required>
@@ -60,5 +64,10 @@
       <button type="submit">Submit</button>
     </form>
   </main>
+  <script>
+    if (new URLSearchParams(window.location.search).get("registered") === "1") {
+      document.getElementById("registration-status").hidden = false;
+    }
+  </script>
 </body>
 </html>

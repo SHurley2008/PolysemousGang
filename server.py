@@ -2,6 +2,7 @@
 
 import csv
 import os
+import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs
@@ -18,11 +19,41 @@ FIELDS = [
     "email",
     "address",
 ]
+ACCOUNTS_LOCK = threading.Lock()
+
+
+def save_registration(record, accounts_file=None):
+    if accounts_file is None:
+        accounts_file = ACCOUNTS_FILE
+    with ACCOUNTS_LOCK:
+        needs_header = not accounts_file.exists() or accounts_file.stat().st_size == 0
+        with accounts_file.open("a", newline="", encoding="utf-8") as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=FIELDS)
+            if needs_header:
+                writer.writeheader()
+            writer.writerow(record)
+
+
+def load_registrations(accounts_file=None):
+    if accounts_file is None:
+        accounts_file = ACCOUNTS_FILE
+    with ACCOUNTS_LOCK:
+        if not accounts_file.exists():
+            return []
+        with accounts_file.open(newline="", encoding="utf-8") as csv_file:
+            return list(csv.DictReader(csv_file))
 
 
 class SiteHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT), **kwargs)
+
+    def do_GET(self):
+        requested_file = Path(self.translate_path(self.path)).resolve()
+        if requested_file == ACCOUNTS_FILE.resolve():
+            self.send_error(404, "Not found")
+            return
+        super().do_GET()
 
     def do_POST(self):
         if self.path != "/register":
@@ -52,15 +83,14 @@ class SiteHandler(SimpleHTTPRequestHandler):
             self.send_error(400, "Please enter a valid age")
             return
 
-        needs_header = not ACCOUNTS_FILE.exists() or ACCOUNTS_FILE.stat().st_size == 0
-        with ACCOUNTS_FILE.open("a", newline="", encoding="utf-8") as csv_file:
-            writer = csv.DictWriter(csv_file, fieldnames=FIELDS)
-            if needs_header:
-                writer.writeheader()
-            writer.writerow(record)
+        try:
+            save_registration(record)
+        except OSError:
+            self.send_error(500, "Could not save registration")
+            return
 
         self.send_response(303)
-        self.send_header("Location", "/page.html")
+        self.send_header("Location", "/Register.html?registered=1")
         self.send_header("Content-Length", "0")
         self.end_headers()
 
